@@ -110,6 +110,20 @@ section{padding:90px 60px}
   border-bottom:2px solid #000
 }
 
+/* SEO TEXT */
+.seo-text{
+  max-width:900px;
+  margin:80px auto 0;
+  line-height:1.8;
+  font-size:16px;
+  color:#444;
+}
+.seo-text h2{
+  margin-bottom:20px;
+  font-size:26px;
+  color:#000;
+}
+
 /* FOOTER */
 footer{
   background:#111;
@@ -131,7 +145,8 @@ footer{
   section{padding:70px 20px}
   .hero-content h1{font-size:30px}
 }
-  /* FLOAT BUTTONS */
+
+/* FLOAT BUTTONS */
 .float{
   position:fixed;
   right:20px;
@@ -145,81 +160,25 @@ footer{
   display:flex;
   align-items:center;
   justify-content:center;
-  color:#fff;
-  font-size:22px;
-  text-decoration:none;
   box-shadow:0 4px 15px rgba(0,0,0,.35)
 }
-.whatsapp a{background:#25D366}
+.whatsapp a img{
+  width:55px;height:55px;border-radius:50%
+}
 .call a{background:#000}
-  .whatsapp a img{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
-  transition:.3s;
-}
 
-.whatsapp a img:hover{
-  transform:scale(1.08);
-}
-  /* MOBILE HEADER FIX */
+/* MOBILE HEADER FIX */
 @media (max-width:768px){
-
   header{
-    flex-direction:column;
-    align-items:center;
-    padding:12px 16px;
-  }
-
-  header img{
-    height:50px;
-    margin-bottom:10px;
-  }
-
-  nav{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:12px;
-  }
-
-  nav a{
-    margin:0;
-    font-size:16px;
-  }
-
-  .btn-res{
-    width:100%;
-    text-align:center;
-    margin-top:6px;
-  }
-}
-  /* BLOG PAGE MOBILE NAV FIX */
-@media (max-width:768px){
-
-  .blog-page header{
     flex-direction:row;
     justify-content:space-between;
-    align-items:center;
+    padding:12px 16px;
   }
-
-  .blog-page nav{
-    flex-direction:row;
-    width:auto;
-    gap:18px;
+  nav{
+    display:flex;
+    gap:14px;
   }
-
-  .blog-page nav a{
-    font-size:15px;
-  }
-
-  .blog-page .btn-res{
-    width:auto;
-    padding:10px 18px;
-    margin-top:0;
-  }
+  nav a{font-size:15px}
 }
 </style>
 </head>
@@ -247,34 +206,47 @@ footer{
 <section>
   <div class="blog-grid">
 
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7">
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1564951434112-64d74cc2a2d7" alt="Kadıköy Günlük Apart">
       <div class="blog-content">
         <h2>Kadıköy’de Günlük Apart Konaklama</h2>
-        <p>Kadıköy'de günlük apart mı otel mi tercih edilmeli? Gün içi konaklama avantajları ve ipuçları.</p>
-        <a href="#">Devamını Oku</a>
+        <p>Kadıköy’de günlük apart mı otel mi tercih edilmeli? Merkezi ve ekonomik konaklama rehberi.</p>
+        <a href="kadikoy-gunluk-apart.html">Devamını Oku</a>
       </div>
-    </div>
+    </article>
 
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200">
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200" alt="Kadıköy Gezilecek Yerler">
       <div class="blog-content">
         <h2>Kadıköy’de Gezilecek Yerler</h2>
-        <p>Moda Sahili, Kadıköy Çarşısı, Barlar Sokağı ve daha fazlası…</p>
-        <a href="#">Devamını Oku</a>
+        <p>Moda Sahili, Kadıköy Çarşısı, Barlar Sokağı ve Kadıköy’ün en güzel noktaları.</p>
+        <a href="kadikoy-gezilecek-yerler.html">Devamını Oku</a>
       </div>
-    </div>
+    </article>
 
-    <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e">
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Kadıköy Ulaşım Rehberi">
       <div class="blog-content">
         <h2>Kadıköy Ulaşım Rehberi</h2>
-        <p>Metro, Marmaray, vapur ve otobüslerle Kadıköy’e ulaşım.</p>
-        <a href="#">Devamını Oku</a>
+        <p>Metro, Marmaray, vapur ve otobüslerle Kadıköy’e en kolay ulaşım yolları.</p>
+        <a href="kadikoy-ulasim-rehberi.html">Devamını Oku</a>
       </div>
-    </div>
+    </article>
 
   </div>
+
+  <div class="seo-text">
+    <h2>Kadıköy Metro Apart Konaklama Rehberi</h2>
+    <p>
+      Kadıköy Metro Apart, İstanbul Anadolu Yakası’nda merkezi konumda günlük apart ve kısa süreli konaklama
+      arayan misafirler için ideal bir seçenektir. Metro, Marmaray ve vapur hatlarına yürüme mesafesinde yer alır.
+    </p>
+    <p>
+      Blog sayfamızda Kadıköy’de gezilecek yerler, ulaşım rehberleri ve konaklama tavsiyeleri paylaşılmaktadır.
+      Kadıköy’de uygun fiyatlı, temiz ve güvenli bir konaklama arıyorsanız doğru yerdesiniz.
+    </p>
+  </div>
+
 </section>
 
 <footer>
@@ -284,15 +256,18 @@ footer{
     © 2026 Kadıköy Metro Apart | Webvereklam.com
   </div>
 </footer>
+
 <div class="float whatsapp">
   <a href="https://wa.me/905321648080" target="_blank">
     <img src="https://resimyukle.org/i/cNqiQi3l.png" alt="WhatsApp">
   </a>
 </div>
-  
+
 <div class="float call">
-  <a href="tel:+905321648080" aria-label="Telefon">📞</a>
+  <a href="tel:+905321648080" aria-label="Telefon">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" width="26">
+  </a>
 </div>
-  
+
 </body>
 </html>
