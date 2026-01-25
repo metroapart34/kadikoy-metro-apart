@@ -152,6 +152,17 @@ footer{
 }
 .whatsapp a{background:#25D366}
 .call a{background:#000}
+  .whatsapp a img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:.3s;
+}
+
+.whatsapp a img:hover{
+  transform:scale(1.08);
+}
 </style>
 </head>
 
@@ -216,9 +227,11 @@ footer{
   </div>
 </footer>
 <div class="float whatsapp">
-  <a href="https://wa.me/905321648080" aria-label="WhatsApp">💬</a>
+  <a href="https://wa.me/905321648080" target="_blank">
+    <img src="https://resimyukle.org/i/cNqiQi3l.png" alt="WhatsApp">
+  </a>
 </div>
-
+  
 <div class="float call">
   <a href="tel:+905321648080" aria-label="Telefon">📞</a>
 </div>
