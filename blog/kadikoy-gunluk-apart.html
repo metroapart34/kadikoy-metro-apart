@@ -2,178 +2,123 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
-<title>Kadıköy Günlük Apart | Kadıköy Metro Apart</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kadıköy'de günlük apart konaklama rehberi. Kadıköy Metro Apart ayrıcalıkları, ulaşım ve konaklama bilgileri.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Kadıköy Günlük Apart Konaklama Rehberi | Metro Apart</title>
+<meta name="description" content="Kadıköy günlük apart konaklama rehberi. Kadıköy Metro Apart ile merkezi, konforlu ve ekonomik apart daire seçenekleri.">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{background:#fff;color:#222}
+body{
+  margin:0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height:1.7;
+  color:#222;
+  background:#fff;
+}
 
 /* HEADER */
 header{
-  position:fixed;
-  top:0;left:0;width:100%;
+  position:sticky;
+  top:0;
   background:#fff;
+  border-bottom:1px solid #eee;
   z-index:1000;
+}
+.nav{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
   display:flex;
-  align-items:center;
   justify-content:space-between;
-  padding:16px 50px;
-  box-shadow:0 2px 10px rgba(0,0,0,.06)
-}
-header img{height:55px}
-
-nav{
-  display:flex;
   align-items:center;
-  gap:22px;
 }
-
+.logo{
+  font-weight:700;
+  font-size:20px;
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:25px;
+  margin:0;
+  padding:0;
+}
 nav a{
   text-decoration:none;
-  color:#000;
+  color:#111;
   font-weight:500;
-  position:relative;
+}
+nav a.active{
+  border-bottom:2px solid #000;
+  padding-bottom:4px;
 }
 
-nav a.active::after,
-nav a:hover::after{
-  content:"";
-  position:absolute;
-  left:0;bottom:-4px;
-  width:100%;
-  height:2px;
-  background:#000;
+/* MOBILE MENU */
+.menu-btn{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
 }
-
-.btn-res{
-  background:#000;
-  color:#fff;
-  padding:10px 20px;
-  border-radius:10px;
+@media(max-width:768px){
+  nav ul{
+    display:none;
+    position:absolute;
+    top:65px;
+    right:20px;
+    background:#fff;
+    flex-direction:column;
+    border:1px solid #ddd;
+    width:200px;
+    padding:15px;
+  }
+  nav ul.show{
+    display:flex;
+  }
+  .menu-btn{
+    display:block;
+  }
 }
-
-/* HERO */
-.hero{
-  margin-top:90px;
-  height:45vh;
-  background:url("https://resimyukle.org/i/yM7OEDwQ.jpg") center/cover no-repeat;
-  position:relative;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.55);
-}
-.hero-content{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  color:#fff;
-  text-align:center;
-}
-.hero-content h1{font-size:38px;margin-bottom:10px}
-.hero-content p{font-size:17px}
 
 /* CONTENT */
-section{
-  padding:80px 50px;
-  max-width:1000px;
+.container{
+  max-width:900px;
   margin:auto;
+  padding:40px 20px;
 }
-section h2{
-  font-size:32px;
+h1{
+  font-size:34px;
   margin-bottom:20px;
 }
-section p{
+h2{
+  margin-top:35px;
+  font-size:24px;
+}
+p{
   font-size:17px;
-  line-height:1.7;
-  color:#444;
   margin-bottom:18px;
 }
 
-/* FOOTER */
-footer{
-  background:#111;
-  color:#ddd;
-  padding:40px 20px 25px;
-  text-align:center;
-}
-.footer-copy{
-  margin-top:15px;
-  border-top:1px solid rgba(255,255,255,.2);
-  padding-top:15px;
-  font-size:14px;
-  color:#aaa;
-}
-
 /* FLOAT BUTTONS */
-.float{
+.float-whatsapp, .float-phone{
   position:fixed;
   right:20px;
-  z-index:999;
-}
-.whatsapp{bottom:95px}
-.call{bottom:25px}
-
-.float a{
-  width:56px;
-  height:56px;
+  width:55px;
+  height:55px;
   border-radius:50%;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-decoration:none;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
-  font-size:24px;
-}
-
-.whatsapp a img{
-  width:56px;
-  height:56px;
-  border-radius:50%;
-}
-
-.call a{
-  background:#000;
   color:#fff;
+  font-size:26px;
+  text-decoration:none;
+  z-index:999;
 }
-
-/* MOBILE FIX – NET MENÜ */
-@media (max-width:768px){
-
-  header{
-    padding:12px 16px;
-  }
-
-  header img{
-    height:45px;
-  }
-
-  nav{
-    gap:14px;
-  }
-
-  nav a{
-    font-size:15px;
-  }
-
-  .btn-res{
-    padding:8px 14px;
-    font-size:14px;
-  }
-
-  section{
-    padding:70px 20px;
-  }
-
-  .hero-content h1{
-    font-size:28px;
-  }
+.float-whatsapp{
+  bottom:90px;
+  background:#25D366;
+}
+.float-phone{
+  bottom:20px;
+  background:#000;
 }
 </style>
 </head>
@@ -181,24 +126,24 @@ footer{
 <body>
 
 <header>
-  <img src="https://resimyukle.org/i/jiXvy4X9.png" alt="Metro Apart">
-  <nav>
-    <a href="../index.html">Anasayfa</a>
-    <a href="../blog.html" class="active">Blog</a>
-    <a href="../index.html#odalar">Odalar</a>
-    <a href="../index.html#iletisim">İletişim</a>
-    <a href="https://wa.me/905321648080" class="btn-res">Rezervasyon</a>
-  </nav>
+  <div class="nav">
+    <div class="logo">METRO APART</div>
+
+    <div class="menu-btn" onclick="menuToggle()">☰</div>
+
+    <nav>
+      <ul id="menu">
+        <li><a href="/" >Anasayfa</a></li>
+        <li><a href="/blog.html" class="active">Blog</a></li>
+        <li><a href="/odalar.html">Odalar</a></li>
+        <li><a href="/iletisim.html">İletişim</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
-<div class="hero">
-  <div class="hero-content">
-    <h1>Kadıköy Günlük Apart</h1>
-    <p>Kadıköy’de Konforlu ve Merkezi Konaklama</p>
-  </div>
-</div>
-<section>
-  <h2>Kadıköy Günlük Apart Konaklama Rehberi</h2>
+<div class="container">
+  <h1>Apart Konaklama Rehberi</h1>
 
   <p>
     Kadıköy, İstanbul’un en canlı ve en çok tercih edilen bölgelerinden biridir.
@@ -208,72 +153,33 @@ footer{
 
   <p>
     Kadıköy Metro Apart, otel konforunu ev rahatlığıyla birleştirerek misafirlerine
-    kısa ve uzun süreli konaklamalarda ideal bir çözüm sunar. Günlük apart tercih eden
-    misafirler için mahremiyet, konfor ve ulaşım kolaylığı büyük önem taşır.
+    kısa ve uzun süreli konaklamalarda ideal bir çözüm sunar.
+    Günlük apart tercih eden misafirler için mahremiyet, konfor ve ulaşım kolaylığı
+    büyük önem taşır.
   </p>
 
   <h2>Kadıköy Metro Apart Neden Tercih Edilmeli?</h2>
 
   <p>
     Kadıköy Metro Apart; metro, Marmaray ve vapur hatlarına yürüme mesafesinde
-    bulunması sayesinde İstanbul’un her noktasına hızlı ulaşım imkanı sağlar.
-    İş seyahati, turistik gezi ya da kısa süreli konaklamalar için merkezi bir
-    lokasyonda yer alır.
+    yer almasıyla ulaşım avantajı sağlar. Apart dairelerimiz, modern dizaynı ve
+    tam donanımlı yapısıyla hem iş hem turistik seyahatler için uygundur.
   </p>
 
   <p>
-    Günlük apart dairelerimiz düzenli olarak temizlenmekte olup, konforlu yataklar,
-    tam donanımlı mutfak, hızlı internet ve sessiz bir konaklama ortamı sunar.
-    Kadıköy’de ev konforunda bir deneyim arayan misafirler için ideal bir tercihtir.
+    Günlük apart konaklama, özellikle aileler ve çiftler için daha geniş yaşam alanı
+    sunduğundan otellere kıyasla çok daha konforludur.
   </p>
-
-  <h2>Kadıköy’de Gezilecek Yerler</h2>
-
-  <p>
-    Kadıköy’de konaklarken Moda Sahili, Kadıköy Çarşısı, Barlar Sokağı ve
-    tarihi sokakları keşfetme fırsatı bulabilirsiniz. Ayrıca Kadıköy vapur iskelesi
-    sayesinde Eminönü, Karaköy ve Beşiktaş gibi noktalara deniz yoluyla
-    kolayca ulaşabilirsiniz.
-  </p>
-
-  <p>
-    Kadıköy Metro Apart’ta konaklayan misafirler, bölgenin sunduğu kafe kültürü,
-    sanat etkinlikleri ve sahil yürüyüş alanlarından faydalanarak
-    İstanbul’u yerel bir bakış açısıyla deneyimler.
-  </p>
-
-  <h2>Kadıköy Günlük Apart Fiyatları</h2>
-
-  <p>
-    Kadıköy günlük apart fiyatları; konaklama süresi, daire özellikleri ve sezonluk
-    yoğunluğa göre değişiklik gösterebilir. Kadıköy Metro Apart, uygun fiyatlı ve
-    kaliteli konaklama anlayışıyla misafirlerine avantajlı seçenekler sunar.
-  </p>
-
-  <p>
-    Eğer siz de Kadıköy’de merkezi, güvenli ve konforlu bir günlük apart arıyorsanız,
-    Kadıköy Metro Apart ile iletişime geçerek rezervasyonunuzu kolayca oluşturabilirsiniz.
-  </p>
-</section>
-
-<footer>
-  <p>Söğütlüçeşme Caddesi Dericizeynel Sk. No:11 Kadıköy / İstanbul</p>
-  <p>📞 0532 164 8080</p>
-  <div class="footer-copy">
-    © 2026 Kadıköy Metro Apart
-  </div>
-</footer>
-
-<!-- FLOAT BUTTONS -->
-<div class="float whatsapp">
-  <a href="https://wa.me/905321648080" target="_blank">
-    <img src="https://resimyukle.org/i/cNqiQi3l.png" alt="WhatsApp">
-  </a>
 </div>
 
-<div class="float call">
-  <a href="tel:+905321648080" aria-label="Telefon">📞</a>
-</div>
+<a href="https://wa.me/905XXXXXXXXX" class="float-whatsapp" target="_blank">💬</a>
+<a href="tel:+905XXXXXXXXX" class="float-phone">📞</a>
+
+<script>
+function menuToggle(){
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
