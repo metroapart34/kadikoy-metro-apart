@@ -131,6 +131,27 @@ footer{
   section{padding:70px 20px}
   .hero-content h1{font-size:30px}
 }
+  /* FLOAT BUTTONS */
+.float{
+  position:fixed;
+  right:20px;
+  z-index:999
+}
+.whatsapp{bottom:90px}
+.call{bottom:20px}
+.float a{
+  width:55px;height:55px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:22px;
+  text-decoration:none;
+  box-shadow:0 4px 15px rgba(0,0,0,.35)
+}
+.whatsapp a{background:#25D366}
+.call a{background:#000}
 </style>
 </head>
 
@@ -194,6 +215,13 @@ footer{
     © 2026 Kadıköy Metro Apart | Webvereklam.com
   </div>
 </footer>
+<div class="float whatsapp">
+  <a href="https://wa.me/905321648080" aria-label="WhatsApp">💬</a>
+</div>
 
+<div class="float call">
+  <a href="tel:+905321648080" aria-label="Telefon">📞</a>
+</div>
+  
 </body>
 </html>
