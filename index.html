@@ -9,6 +9,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+  /* MOBILE HEADER FIX */
+@media (max-width:768px){
+
+  header{
+    flex-direction:column;
+    align-items:center;
+    padding:12px 16px;
+  }
+
+  header img{
+    height:50px;
+    margin-bottom:10px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+
+  nav a{
+    margin:0;
+    font-size:14px;
+  }
+
+  .btn-res{
+    margin-top:10px;
+    padding:10px 18px;
+    font-size:14px;
+    border-radius:10px;
+  }
+}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{color:#222;background:#fff}
 
@@ -323,4 +356,5 @@ let RW={"type":"bar","hotelUrl":["Metro-Apart-Kadikoy"],"lang":"tr","currency":"
 <div class="float call"><a href="tel:+905321648080">📞</a></div>
 
 </body>
+
 </html>
