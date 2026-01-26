@@ -1,71 +1,288 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Kadıköy Günlük Apart | Kadıköy Metro Apart</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kadıköy'de günlük apart konaklama rehberi. Kadıköy Metro Apart ayrıcalıkları, ulaşım ve konaklama bilgileri.">
 
-<section class="blog-content">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <h1>Kadıköy’de Gezilecek Yerler | Kadıköy Gezi Rehberi</h1>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#fff;color:#222}
+
+/* HEADER */
+header{
+  position:fixed;
+  top:0;left:0;width:100%;
+  background:#fff;
+  z-index:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 50px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06)
+}
+header img{height:55px}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
+
+nav a{
+  text-decoration:none;
+  color:#000;
+  font-weight:500;
+  position:relative;
+}
+
+nav a.active::after,
+nav a:hover::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-4px;
+  width:100%;
+  height:2px;
+  background:#000;
+}
+
+.btn-res{
+  background:#000;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:10px;
+}
+
+/* HERO */
+.hero{
+  margin-top:90px;
+  height:45vh;
+  background:url("https://resimyukle.org/i/yM7OEDwQ.jpg") center/cover no-repeat;
+  position:relative;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero-content{
+  position:absolute;
+  top:50%;left:50%;
+  transform:translate(-50%,-50%);
+  color:#fff;
+  text-align:center;
+}
+.hero-content h1{font-size:38px;margin-bottom:10px}
+.hero-content p{font-size:17px}
+
+/* CONTENT */
+section{
+  padding:80px 50px;
+  max-width:1000px;
+  margin:auto;
+}
+section h2{
+  font-size:32px;
+  margin-bottom:20px;
+}
+section p{
+  font-size:17px;
+  line-height:1.7;
+  color:#444;
+  margin-bottom:18px;
+}
+
+/* FOOTER */
+footer{
+  background:#111;
+  color:#ddd;
+  padding:40px 20px 25px;
+  text-align:center;
+}
+.footer-copy{
+  margin-top:15px;
+  border-top:1px solid rgba(255,255,255,.2);
+  padding-top:15px;
+  font-size:14px;
+  color:#aaa;
+}
+
+/* FLOAT BUTTONS */
+.float{
+  position:fixed;
+  right:20px;
+  z-index:999;
+}
+.whatsapp{bottom:95px}
+.call{bottom:25px}
+
+.float a{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+  font-size:24px;
+}
+
+.whatsapp a img{
+  width:56px;
+  height:56px;
+  border-radius:50%;
+}
+
+.call a{
+  background:#000;
+  color:#fff;
+}
+
+/* MOBILE FIX – NET MENÜ */
+@media (max-width:768px){
+
+  header{
+    padding:12px 16px;
+  }
+
+  header img{
+    height:45px;
+  }
+
+  nav{
+    gap:14px;
+  }
+
+  nav a{
+    font-size:15px;
+  }
+
+  .btn-res{
+    padding:8px 14px;
+    font-size:14px;
+  }
+
+  section{
+    padding:70px 20px;
+  }
+
+  .hero-content h1{
+    font-size:28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="https://resimyukle.org/i/jiXvy4X9.png" alt="Metro Apart">
+  <nav>
+    <a href="../index.html">Anasayfa</a>
+    <a href="../blog.html" class="active">Blog</a>
+    <a href="../index.html#odalar">Odalar</a>
+    <a href="../index.html#iletisim">İletişim</a>
+    <a href="https://wa.me/905321648080" class="btn-res">Rezervasyon</a>
+  </nav>
+</header>
+<div class="hero">
+  <div class="hero-content">
+    <h1>Kadıköy Günlük Apart</h1>
+    <p>Kadıköy’de Konforlu ve Merkezi Konaklama</p>
+  </div>
+</div>
+<section>
+  <h1>Kadıköy’de Gezilecek Yerler</h1>
 
   <p>
-    İstanbul’un en canlı ve en renkli semtlerinden biri olan Kadıköy,
-    tarihi yapıları, sahil yürüyüş alanları, sanat merkezleri ve
-    eğlenceli sokaklarıyla her yıl binlerce ziyaretçiyi ağırlamaktadır.
-    Kadıköy’de gezilecek yerler, hem gündüz hem de gece farklı deneyimler sunar.
+    İstanbul’un en canlı ve karakteristik semtlerinden biri olan Kadıköy,
+    tarihi dokusu, sahil yürüyüşleri ve sosyal yaşamıyla her yaştan ziyaretçiye
+    hitap eder. Kadıköy’de konaklayanlar için gezilecek yerler oldukça fazladır
+    ve çoğu noktaya yürüyerek ulaşmak mümkündür.
   </p>
 
-  <h2>1. Kadıköy Sahili ve Moda Yürüyüş Yolu</h2>
+  <h2>Moda Sahili</h2>
 
   <p>
-    Kadıköy denildiğinde akla gelen ilk yerlerden biri hiç şüphesiz
-    Kadıköy Sahili’dir. Moda Sahili boyunca uzanan yürüyüş yolu,
-    deniz manzarası eşliğinde yürüyüş yapmak, bisiklet sürmek ve
-    gün batımını izlemek için idealdir.
+    Kadıköy denince akla gelen ilk yerlerden biri Moda Sahili’dir.
+    Deniz manzarası, yürüyüş yolları ve gün batımı manzarasıyla
+    hem İstanbulluların hem de turistlerin favori noktalarından biridir.
+    Moda Sahili, sabah yürüyüşleri ve akşam saatlerinde keyifli vakit geçirmek
+    için idealdir.
+  </p>
+
+  <h2>Kadıköy Çarşısı</h2>
+
+  <p>
+    Kadıköy Çarşısı; balıkçılar, kafeler, baharatçılar ve yerel dükkanlarla
+    dolu renkli bir atmosfere sahiptir. Günün her saati hareketli olan bu bölge,
+    Kadıköy’ün gerçek ruhunu hissetmek isteyenler için mutlaka görülmelidir.
   </p>
 
   <p>
-    Özellikle yaz aylarında Moda Sahili, hem İstanbulluların
-    hem de turistlerin en çok tercih ettiği noktalar arasında yer alır.
+    Çarşı içerisinde yer alan tarihi pasajlar ve sokak lezzetleri,
+    Kadıköy gezisinin vazgeçilmez parçaları arasında yer alır.
   </p>
 
-  <h2>2. Moda</h2>
+  <h2>Barlar Sokağı</h2>
 
   <p>
-    Kadıköy’ün en popüler semtlerinden biri olan Moda,
-    kafeleri, sanat galerileri ve tarihi yapılarıyla ünlüdür.
-    Moda sokaklarında dolaşırken kendinizi adeta Avrupa şehirlerinde
-    geziyormuş gibi hissedebilirsiniz.
-  </p>
-
-  <p>
-    Moda aynı zamanda fotoğraf çekmek isteyenler için de
-    oldukça zengin manzaralar sunar.
-  </p>
-
-  <h2>3. Bahariye Caddesi</h2>
-
-  <p>
-    Bahariye Caddesi, Kadıköy’ün alışveriş ve sosyal yaşam merkezidir.
-    Tramvay hattı boyunca uzanan cadde üzerinde mağazalar,
-    kafeler, restoranlar ve kültür merkezleri bulunur.
+    Kadıköy’ün gece hayatı denildiğinde akla gelen ilk adreslerden biri
+    Barlar Sokağı’dır. Canlı müzik mekanları, publar ve alternatif müzik
+    sahneleriyle özellikle akşam saatlerinde oldukça hareketlidir.
   </p>
 
   <p>
-    Cadde üzerinde yer alan Süreyya Operası,
-    Kadıköy’ün kültürel simgelerinden biridir.
+    Kadıköy Barlar Sokağı, farklı müzik zevklerine hitap eden mekanlarıyla
+    hem yerli hem de yabancı ziyaretçilerin ilgisini çeker.
   </p>
 
-  <h2>4. Kadıköy Çarşısı</h2>
+  <h2>Bahariye Caddesi</h2>
 
   <p>
-    Kadıköy Çarşısı, taze balık, baharat, meyve-sebze ve
-    yöresel ürünlerin satıldığı canlı bir alışveriş alanıdır.
-    Aynı zamanda sokak lezzetlerini denemek isteyenler için
-    de oldukça zengin seçenekler sunar.
+    Bahariye Caddesi, alışveriş yapmak, kafelerde vakit geçirmek ve
+    Kadıköy’ün günlük yaşamını gözlemlemek için ideal bir noktadır.
+    Nostaljik tramvay hattı ile semtin en bilinen simgelerinden biridir.
+  </p>
+
+  <h2>Kadıköy’de Konaklama Avantajı</h2>
+
+  <p>
+    Kadıköy’de gezilecek yerlere yakın bir konumda konaklamak,
+    zaman ve ulaşım açısından büyük avantaj sağlar.
+    Kadıköy Metro Apart, Moda Sahili, Kadıköy Çarşısı ve Bahariye Caddesi’ne
+    yakınlığı sayesinde misafirlerine merkezi ve konforlu bir konaklama sunar.
   </p>
 
   <p>
-    Çarşı içinde yer alan meşhur balıkçılar ve esnaf lokantaları,
-    Kadıköy kültürünün önemli bir parçasıdır.
+    Kadıköy’ün enerjik atmosferini doyasıya yaşamak isteyenler için,
+    merkezi konumda bir günlük apart tercih etmek konaklama deneyimini
+    çok daha keyifli hale getirir.
   </p>
+</section>
+<footer>
+  <p>Söğütlüçeşme Caddesi Dericizeynel Sk. No:11 Kadıköy / İstanbul</p>
+  <p>📞 0532 164 8080</p>
+  <div class="footer-copy">
+    © 2026 Kadıköy Metro Apart
+  </div>
+</footer>
 
-  <h2>5. Barlar Sokağı</h2>
+<!-- FLOAT BUTTONS -->
+<div class="float whatsapp">
+  <a href="https://wa.me/905321648080" target="_blank">
+    <img src="https://resimyukle.org/i/cNqiQi3l.png" alt="WhatsApp">
+  </a>
+</div>
 
-  <p>
-    Kadıköy gece hayat
+<div class="float call">
+  <a href="tel:+905321648080" aria-label="Telefon">📞</a>
+</div>
+
+</body>
+</html>
