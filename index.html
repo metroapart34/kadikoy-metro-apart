@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Kadıköy Metro Apart | Günlük Apart & Otel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --dark: #111; --gold: #c5a059; }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+        body { background:#fff; color:#333; line-height:1.6; }
+
+        /* HEADER */
+        header { position:fixed; top:0; width:100%; padding:20px 60px; background:#fff; display:flex; justify-content:space-between; align-items:center; z-index:1000; box-shadow:0 2px 15px rgba(0,0,0,0.05); }
+        header img { height:50px; }
+        
+        /* MOBİL MENÜ CSS EKLEMESİ */
+        .menu-toggle { display:none; font-size:24px; cursor:pointer; }
+        nav { display:flex; align-items:center; }
+        nav a { margin:0 15px; text-decoration:none; color:var(--dark); font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:1px; transition:0.3s; }
+        nav a:hover { color:var(--gold); }
+        .btn-res { background:var(--dark); color:#fff; padding:10px 20px; border-radius:8px; }
+        @media (max-width: 768px) {
+            .menu-toggle { display:block; }
+            nav { display:none; flex-direction:column; position:absolute; top:80px; left:0; width:100%; background:#fff; padding:20px; box-shadow:0 10px 10px rgba(0,0,0,0.1); }
+            nav.active { display:flex; }
+            nav a { margin:15px 0; }
+        }
+
+        /* LIGHTBOX CSS EKLEMESİ */
+        #lightbox { display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; cursor:pointer; }
+        #lightbox img { max-width:90%; max-height:80%; border-radius:8px; box-shadow:0 0 20px rgba(0,0,0,0.5); }
+
+        /* HERO, WIDGET, CARDS, GALLERY, MAP, FOOTER, FLOAT (Orijinal Kodun) */
+        .hero { margin-top:90px; height:60vh; position:relative; }
+        .hero img { width:100%; height:100%; object-fit:cover; }
+        .hero-content { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; color:#fff; z-index:2; }
+        .hero-content h1 { font-family:'Playfair Display',serif; font-size:48px; margin-bottom:10px; }
+        .concept { font-size:14px; letter-spacing:3px; text-transform:uppercase; }
+        .slogan { margin-top:15px; font-family:'Playfair Display',serif; font-size:32px; }
+        .booking-section { padding:50px 20px; background:#f9f9f9; }
+        #reseliva-widget { max-width:1100px; margin:0 auto; background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,0.1); padding:20px; }
+        .rooms { max-width:1200px; margin:50px auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:30px; padding:20px; }
+        .card { border-radius:15px; overflow:hidden; box-shadow:0 10px 20px rgba(0,0,0,0.1); transition:0.3s; cursor:pointer; text-decoration:none; color:inherit; display:block; }
+        .card:hover { transform:translateY(-10px); }
+        .card img { width:100%; height:260px; object-fit:cover; }
+        .card-body { padding:25px; text-align:left; }
+        .card-body h3 { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:10px; }
+        .features { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:15px 0; font-size:13px; color:#666; }
+        .features i { color:var(--gold); margin-right:5px; }
+        .btn-card { display:block; width:100%; text-align:center; background:#000; color:#fff; padding:12px; border-radius:8px; margin-top:15px; font-weight:600; }
+        .card:hover .btn-card { background:var(--gold); }
+        .gallery-wrap { max-width:1200px; margin:50px auto; padding:20px; display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+        .gallery-wrap img { width:100%; height:200px; object-fit:cover; border-radius:10px; cursor:pointer; transition:0.3s; }
+        .gallery-wrap img:hover { transform:scale(1.03); }
+        .map-wrap { width:100%; height:400px; margin-top:50px; }
+        .map-wrap iframe { width:100%; height:100%; border:0; }
+        footer { background:#000; color:#aaa; padding:60px 20px; text-align:center; }
+        .float { position:fixed; right:20px; z-index:999; }
+        .whatsapp { bottom:90px; }
+        .call { bottom:20px; }
+        .float a { width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-size:22px; text-decoration:none; box-shadow:0 4px 10px rgba(0,0,0,0.2); }
+        .whatsapp a { background:#25D366; }
+        .call a { background:#000; }
+    </style>
+</head>
+<body>
+
+<div id="lightbox" onclick="this.style.display='none'">
+    <img id="lightbox-img" src="">
+</div>
+
+<header>
+    <img src="https://resimyukle.org/i/jiXvy4X9.png" alt="Logo">
+    <div class="menu-toggle" onclick="document.querySelector('nav').classList.toggle('active')"><i class="fas fa-bars"></i></div>
+    <nav>
+        <a href="#">Anasayfa</a>
+        <a href="#odalar">Odalar</a>
+        <a href="blog.html">Blog</a>
+        <a href="#iletisim">İletişim</a>
+        <a href="https://wa.me/905321648080" class="btn-res">Rezervasyon</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <img src="https://resimyukle.org/i/yM7OEDwQ.jpg">
+    <div class="hero-content">
+        <h1>Kadıköy Metro Apart</h1>
+        <div class="concept">Günlük Apart & Otel Konsepti</div>
+        <div class="slogan">“Evinizdeki Huzur”</div>
+    </div>
+</div>
+
+<div class="booking-section">
+    <div id="reseliva-widget"></div>
+</div>
+
+<section id="odalar">
+    <div class="rooms">
+        <div class="card" onclick="openLightbox('https://webvereklam.org/metroresim/metro1.webp')">
+            <img src="https://webvereklam.org/metroresim/metro1.webp">
+            <div class="card-body">
+                <h3>1 Kişilik Apart Oda</h3>
+                <p><i class="fa-solid fa-user"></i> 1 Kişilik</p>
+                <div class="features">
+                    <span><i class="fa-solid fa-wifi"></i> Ücretsiz Wi-Fi</span>
+                    <span><i class="fa-solid fa-snowflake"></i> Klima</span>
+                    <span><i class="fa-solid fa-tv"></i> LCD TV</span>
+                    <span><i class="fa-solid fa-martini-glass-citrus"></i> Mini Buzdolabı</span>
+                </div>
+                <div class="btn-card">Rezervasyon</div>
+            </div>
+        </div>
+
+        <div class="card" onclick="openLightbox('https://webvereklam.org/metroresim/metro3.webp')">
+            <img src="https://webvereklam.org/metroresim/metro3.webp">
+            <div class="card-body">
+                <h3>2 Kişilik Apart Oda</h3>
+                <p><i class="fa-solid fa-user-group"></i> 2 Kişilik</p>
+                <div class="features">
+                    <span><i class="fa-solid fa-wifi"></i> Ücretsiz Wi-Fi</span>
+                    <span><i class="fa-solid fa-snowflake"></i> Klima</span>
+                    <span><i class="fa-solid fa-tv"></i> LCD TV</span>
+                    <span><i class="fa-solid fa-kitchen-set"></i> Mutfak</span>
+                </div>
+                <div class="btn-card">Rezervasyon</div>
+            </div>
+        </div>
+
+        <div class="card" onclick="openLightbox('https://webvereklam.org/metroresim/metro4.webp')">
+            <img src="https://webvereklam.org/metroresim/metro4.webp">
+            <div class="card-body">
+                <h3>3 Kişilik Aile Apartı</h3>
+                <p><i class="fa-solid fa-users"></i> 3 Kişilik</p>
+                <div class="features">
+                    <span><i class="fa-solid fa-wifi"></i> Ücretsiz Wi-Fi</span>
+                    <span><i class="fa-solid fa-snowflake"></i> Klima</span>
+                    <span><i class="fa-solid fa-tv"></i> LCD TV</span>
+                    <span><i class="fa-solid fa-couch"></i> Geniş Alan</span>
+                </div>
+                <div class="btn-card">Rezervasyon</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="gallery-wrap">
+    <img src="https://webvereklam.org/metroresim/metro2.webp" onclick="openLightbox(this.src)">
+    <img src="https://webvereklam.org/metroresim/metro5.webp" onclick="openLightbox(this.src)">
+    <img src="https://webvereklam.org/metroresim/metro6.webp" onclick="openLightbox(this.src)">
+</div>
+
+<div class="map-wrap">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.666110825708!2d29.04944327664658!3d40.989710771350615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac78536f9cc03%3A0x6b0432f837315579!2sKad%C4%B1k%C3%B6y%20Metro%20Apart!5e0!3m2!1str!2str!4v1717660000000" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<footer id="iletisim">
+    <p>Söğütlüçeşme Caddesi Dericizeynel Sk. No:11 Kadıköy / İstanbul</p>
+    <p>📞 0532 164 8080</p>
+</footer>
+
+<div class="float whatsapp"><a href="https://wa.me/905321648080"><img src="https://resimyukle.org/i/cNqiQi3l.png" width="30"></a></div>
+<div class="float call"><a href="tel:+905321648080">📞</a></div>
+
+<script>
+    // Lightbox Fonksiyonu
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').style.display = 'flex';
+    }
+    document.addEventListener('keydown', function(e) {
+        if(e.key === "Escape") document.getElementById('lightbox').style.display = 'none';
+    });
+
+    // Reseliva Scripti
+    (function(d,s,id){
+      var js,fjs=d.getElementsByTagName(s)[0];
+      if(d.getElementById(id))return;
+      js=d.createElement(s);js.id=id;
+      js.src="https://www.reseliva.com/ReselivaWidget/JS/rw_script.js";
+      fjs.parentNode.insertBefore(js,fjs);
+    }(document,'script','reseliva_widget'));
+    let RW={"type":"bar","hotelUrl":["Metro-Apart-Kadikoy"],"lang":"tr","currency":"TRY","target":"_blank"};
+</script>
+
+</body>
+</html>
